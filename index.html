@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoMarket Latino - Tu Próximo Vehículo te Espera</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header-main">
+        <div class="container d-flex justify-content-between align-items-center py-3">
+            <div class="logo">
+                <img id="site-logo" src="media/default_logo.png" alt="AutoMarket Latino Logo" style="height: 50px;">
+                <h1 id="site-name" class="d-inline-block ms-3">AutoMarket Latino</h1>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav">
+                    <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Vender mi Auto</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Financiamiento</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="search-bar">
+                <input type="text" id="search-input" class="form-control" placeholder="Buscar por marca, modelo...">
+                <button class="btn btn-primary" id="search-button">Buscar</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container my-4">
+        <div class="row">
+            <aside class="col-md-3 sidebar">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h5>Información General</h5>
+                    </div>
+                    <ul class="list-group list-group-flush" id="general-info-tabs">
+                        <li class="list-group-item"><a href="#" data-tab="about">Sobre Nosotros</a></li>
+                        <li class="list-group-item"><a href="#" data-tab="how-it-works">Cómo Funciona</a></li>
+                        <li class="list-group-item"><a href="#" data-tab="faq">Preguntas Frecuentes</a></li>
+                        <li class="list-group-item"><a href="#" data-tab="testimonials">Testimonios</a></li>
+                    </ul>
+                </div>
+
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h5>Filtrar Vehículos</h5>
+                    </div>
+                    <div class="card-body">
+                        <form id="filter-form">
+                            <div class="mb-3">
+                                <label for="condition" class="form-label">Condición</label>
+                                <select class="form-select" id="condition">
+                                    <option value="">Todas</option>
+                                    <option value="new">Nuevos</option>
+                                    <option value="used">Usados</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="brand" class="form-label">Marca</label>
+                                <select class="form-select" id="brand">
+                                    <option value="">Todas</option>
+                                    </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="year" class="form-label">Año</label>
+                                <input type="number" class="form-control" id="year" placeholder="Desde">
+                            </div>
+                            <div class="mb-3">
+                                <label for="price-range" class="form-label">Rango de Precio</label>
+                                <input type="range" class="form-range" id="price-range" min="0" max="1000000" value="1000000">
+                                <span id="price-display">$0 - $1,000,000</span>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Aplicar Filtros</button>
+                        </form>
+                    </div>
+                </div>
+            </aside>
+
+            <section class="col-md-9 main-content">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h2 id="content-title">Vehículos en Venta</h2>
+                    <div class="sort-options">
+                        <label for="sort-by" class="form-label me-2">Ordenar por:</label>
+                        <select class="form-select d-inline-block w-auto" id="sort-by">
+                            <option value="relevance">Más relevantes</option>
+                            <option value="price-asc">Precio: Menor a Mayor</option>
+                            <option value="price-desc">Precio: Mayor a Menor</option>
+                            <option value="year-desc">Año: Más Reciente</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div id="vehicle-listings" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                    </div>
+
+                <nav aria-label="Paginación de vehículos" class="mt-4">
+                    <ul class="pagination justify-content-center" id="pagination">
+                        </ul>
+                </nav>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer-main bg-dark text-white py-4 mt-5">
+        <div class="container text-center">
+            <p>&copy; <span id="current-year"></span> <span id="footer-site-name">AutoMarket Latino</span>. Todos los derechos reservados.</p>
+            <div class="social-links">
+                <a href="#" class="text-white me-2">Facebook</a>
+                <a href="#" class="text-white me-2">Instagram</a>
+                <a href="#" class="text-white">Twitter</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
